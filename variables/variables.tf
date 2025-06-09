@@ -66,3 +66,19 @@ variable "instance_name" {
   type = list(string)
   default = ["frontend", "catalogue", "cart", "user", "shipping", "payment", "mysql", "rabbitmq"]
 }
+
+variable "domain_name" {
+  default = "doubtfree.online"
+}
+
+variable "zone_id" {
+  default = "Z05489693LFV4727Y7R4T"
+}
+
+variable "type" {
+  default = "A"
+}
+
+variable "ttl" {
+  default = "5"
+}

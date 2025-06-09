@@ -60,7 +60,7 @@ variable "env" {
 
 variable "instances" {
   type = number
-  default = 4
+  default = length(var.instance_name)
 }
 variable "instance_name" {
   type = list(string)

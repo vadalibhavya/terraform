@@ -10,11 +10,7 @@ variable "instance_type" {
   type = string
 }
 
-variable "ec2-tags" {
- default = {
-  Name = "Robhoshop"
- }
-}
+
 
 variable "sg_name" {
   type = string
@@ -60,4 +56,14 @@ variable "ipv6_cidr_block" {
 variable "env" {
   type = string
   default = "development"
+}
+
+
+variable "instances" {
+  type = number
+  default = 4
+}
+variable "instance_name" {
+  type = list(string)
+  default = ["frontend", "catalogue", "cart", "user", "shipping", "payment", "mysql", "rabbitmq"]
 }

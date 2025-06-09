@@ -1,17 +1,18 @@
 resource "aws_instance" "roboshop" {
-  ami           = var.ami_id
-  instance_type = var.env == "dev" ? "t3.micro" : "t3.small"
-  
-
+  count                  = var.instances
+  ami                    = var.ami_id
+  instance_type          = var.env == "dev" ? "t3.micro" : "t3.small"
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-  tags = var.ec2-tags
+  tags                   = {
+    Name= var.instance_name[count.index]
+  }
 }
 
 resource "aws_security_group" "allow_all" {
   name        = var.sg_name
   description = var.sg_description
   tags = {
-    Name = "allow_all"
+    Name = var.sg_name
   }
 
   ingress {

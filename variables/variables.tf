@@ -56,3 +56,8 @@ variable "ipv6_cidr_block" {
   default = ["::/0"]
   type = list(string)
 }
+
+variable "env" {
+  type = string
+  default = "development"
+}

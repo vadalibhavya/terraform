@@ -1,6 +1,6 @@
 variable "ami_id" {
  description = "ami id for the ec2 instance"
-  default = "ami-09c7f895b24c5d8af"
+  default = "ami-09c813fb71547fc4f"
   type = string
 }
 

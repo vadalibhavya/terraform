@@ -58,10 +58,7 @@ variable "env" {
 }
 
 
-variable "instances" {
-  type = number
-  default = length(var.instance_name)
-}
+
 variable "instance_name" {
   type = list(string)
   default = ["frontend", "catalogue", "cart", "user", "shipping", "payment", "mysql", "rabbitmq"]

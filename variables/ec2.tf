@@ -1,5 +1,5 @@
 resource "aws_instance" "roboshop" {
-  count                  = var.instances
+  count                  = length(var.instance_name)
   ami                    = var.ami_id
   instance_type          = var.env == "dev" ? "t3.micro" : "t3.small"
   vpc_security_group_ids = [aws_security_group.allow_all.id]

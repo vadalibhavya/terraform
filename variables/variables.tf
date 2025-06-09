@@ -11,7 +11,6 @@ variable "instance_type" {
 }
 
 
-
 variable "sg_name" {
   type = string
   default = "allow-all-terraform"

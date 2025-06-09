@@ -7,8 +7,8 @@ resource "aws_instance" "roboshop" {
 }
 
 resource "aws_security_group" "allow_all" {
-  name        = "allow_all-terraform"
-  description = "Allow all inbound traffic"
+  name        = var.sg_name
+  description = var.sg_description
   tags = {
     Name = "allow_all"
   }

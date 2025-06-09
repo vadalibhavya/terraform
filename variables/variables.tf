@@ -16,7 +16,7 @@ variable "ec2-tags" {
  }
 }
 
-variable "gd_name" {
+variable "sg_name" {
   type = string
   default = "allow-all-terraform"
 }

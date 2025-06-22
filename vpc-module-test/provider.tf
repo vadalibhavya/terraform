@@ -1,16 +1,16 @@
 terraform {
-	required_providers {
-		aws = {
-			source  = "hashicorp/aws"
-			version = "5.98.0"
-		}
-	}
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.54"
+    }
+  }
   backend "s3" {
-	bucket = "roboshop-terraform"
-	key    = "vpc-test"
-	region = "us-east-1"
-	encrypt = true
-	use_lock_file = true
+    bucket  = "roboshop-terraform-addy"
+    key     = "vpc"
+    region  = "us-east-1"
+    encrypt = true
+
   }
 }
 provider "aws" {
